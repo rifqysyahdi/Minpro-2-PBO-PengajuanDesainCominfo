@@ -13,7 +13,15 @@ public class Pemohon {
         return namaLengkap;
     }
 
+    public void setNamaLengkap(String namaLengkap) {
+        this.namaLengkap = namaLengkap;
+    }
+
     public String getDepartemenBiro() {
         return departemenBiro;
+    }
+
+    public void setDepartemenBiro(String departemenBiro) {
+        this.departemenBiro = departemenBiro;
     }
 }

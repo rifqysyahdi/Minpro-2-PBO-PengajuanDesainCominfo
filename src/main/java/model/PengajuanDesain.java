@@ -1,20 +1,35 @@
 package model;
 
-public class PengajuanDesain {
-    private int idPengajuan;
-    private Pemohon pemohon;
-    private String jenisDesain;
-    private String informasiTambahan;
-    private String deadline;
+public abstract class PengajuanDesain {
+    private final int idPengajuan;
+    private final Pemohon pemohon;
+    private String catatanRevisi;
+    private final String deadline;
     private String status;
 
-    public PengajuanDesain(int idPengajuan, Pemohon pemohon, String jenisDesain, String informasiTambahan, String deadline) {
+    public PengajuanDesain(int idPengajuan, Pemohon pemohon, String catatanRevisi, String deadline) {
         this.idPengajuan = idPengajuan;
         this.pemohon = pemohon;
-        this.jenisDesain = jenisDesain;
-        this.informasiTambahan = informasiTambahan;
+        this.catatanRevisi = catatanRevisi;
         this.deadline = deadline;
-        this.status = "Pending";
+        this.status = "Diterima";
+    }
+
+    public void updateInformasi(String catatanRevisi) {
+        this.catatanRevisi = catatanRevisi;
+    }
+
+    public void updateInformasi(String catatanRevisi, String status) {
+        this.catatanRevisi = catatanRevisi;
+        this.status = status;
+    }
+
+    public void tampilkanDetail() {
+        System.out.println("ID Pengajuan: " + idPengajuan);
+        System.out.println("Pemohon: " + pemohon.getNamaLengkap() + " (" + pemohon.getDepartemenBiro() + ")");
+        System.out.println("Catatan/Info: " + catatanRevisi);
+        System.out.println("Tenggat Waktu: " + deadline);
+        System.out.println("Status Saat Ini: " + status);
     }
 
     public int getIdPengajuan() {
@@ -25,16 +40,8 @@ public class PengajuanDesain {
         return pemohon;
     }
 
-    public String getJenisDesain() {
-        return jenisDesain;
-    }
-
-    public String getInformasiTambahan() {
-        return informasiTambahan;
-    }
-
-    public void setInformasiTambahan(String informasiTambahan) {
-        this.informasiTambahan = informasiTambahan;
+    public String getCatatanRevisi() {
+        return catatanRevisi;
     }
 
     public String getDeadline() {
@@ -43,5 +50,9 @@ public class PengajuanDesain {
 
     public String getStatus() {
         return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
