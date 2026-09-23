@@ -25,13 +25,13 @@ Untuk **Tampilkan Pengajuan**, seluruh ArrayList ditelusuri dan tiap object mema
 
 **Encapsulation** semua atribut di class `Pemohon`, `PengajuanDesain`, `PengajuanDigital`, dan `PengajuanCetak` dideklarasikan `private`, jadi tidak bisa diakses langsung dari luar class. Untuk mengambil atau mengubah nilainya harus lewat method `public` seperti getter/setter (`getNamaLengkap()`, `getIdPengajuan()`, `setStatus()`, dst).
 
-<img width="622" height="513" alt="image" src="https://github.com/user-attachments/assets/9445ac47-74a6-4efc-8d88-44f7a3978766" />
+!<img width="622" height="513" alt="image" src="https://github.com/user-attachments/assets/9445ac47-74a6-4efc-8d88-44f7a3978766" />
 
 **Inheritance** `PengajuanDesain` dibuat sebagai **superclass abstract** yang menyimpan atribut dan method umum (id, pemohon, catatan, deadline, status, `tampilkanDetail()`). Dua class turunannya, `PengajuanDigital` dan `PengajuanCetak`, memakai keyword `extends PengajuanDesain` dan memanggil `super(...)` di constructor-nya untuk mewariskan data dari superclass, lalu menambahkan atribut khusus masing-masing (target platform & format file untuk Digital; ukuran media & jumlah cetak untuk Cetak).
 
-<img width="369" height="121" alt="Screenshot 2026-09-23 160510" src="https://github.com/user-attachments/assets/a635555b-1475-4c3b-b391-5f715b3d0f60" />
+<img width="369" height="121" alt="Screenshot_2026-09-23_160510" src="https://github.com/user-attachments/assets/a635555b-1475-4c3b-b391-5f715b3d0f60" />
 
-<img width="466" height="61" alt="Screenshot 2026-09-23 160921" src="https://github.com/user-attachments/assets/86dff041-1194-4eeb-a794-43d8ac7722d7" />
+<img width="466" height="61" alt="Screenshot_2026-09-23_160921" src="https://github.com/user-attachments/assets/86dff041-1194-4eeb-a794-43d8ac7722d7" />
 
 <img width="477" height="81" alt="Screenshot 2026-09-23 160951" src="https://github.com/user-attachments/assets/33bb02cc-1182-4390-9a7e-55adb2897d8a" />
 
