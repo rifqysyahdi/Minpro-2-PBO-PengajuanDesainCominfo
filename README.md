@@ -29,11 +29,11 @@ Untuk **Tampilkan Pengajuan**, seluruh ArrayList ditelusuri dan tiap object mema
 
 **Inheritance** `PengajuanDesain` dibuat sebagai **superclass abstract** yang menyimpan atribut dan method umum (id, pemohon, catatan, deadline, status, `tampilkanDetail()`). Dua class turunannya, `PengajuanDigital` dan `PengajuanCetak`, memakai keyword `extends PengajuanDesain` dan memanggil `super(...)` di constructor-nya untuk mewariskan data dari superclass, lalu menambahkan atribut khusus masing-masing (target platform & format file untuk Digital; ukuran media & jumlah cetak untuk Cetak).
 
-<img width="369" height="121" alt="Screenshot 2026-09-23 160510" src="https://github.com/user-attachments/assets/37f5d677-9ca8-495d-9c79-846a410aca3b" />
+![Inheritance-superclass](/assets/inheritance-superclass.png)
 
-<img width="466" height="61" alt="Screenshot 2026-09-23 160921" src="https://github.com/user-attachments/assets/de4a5a9b-0d8a-4873-a71a-053534809a3a" />
+![Inheritance-subclass-digital]<img width="466" height="61" alt="Screenshot 2026-09-23 160921" src="https://github.com/user-attachments/assets/de4a5a9b-0d8a-4873-a71a-053534809a3a" />
 
-<img width="477" height="81" alt="Screenshot 2026-09-23 160951" src="https://github.com/user-attachments/assets/e51a624e-c64b-4b68-b71a-b6d6e8e3f3aa" />
+![Inheritance-subclass-cetak]<img width="477" height="81" alt="Screenshot 2026-09-23 160951" src="https://github.com/user-attachments/assets/e51a624e-c64b-4b68-b71a-b6d6e8e3f3aa" />
 
 
 ## Penjelasan Letak Penerapan Nilai Tambah
