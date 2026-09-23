@@ -12,7 +12,12 @@ Program dijalankan lewat class `Main` di package `cominfo`, yang membuat object 
 
 `PengajuanView.jalankan()` menampilkan menu utama dengan 5 pilihan (Tambah, Tampilkan, Update, Hapus, Keluar) dalam perulangan `while` yang baru berhenti kalau user pilih 5. Semua input user divalidasi lewat method bantu `bacaStringTidakKosong()` (menolak input kosong), `bacaInputAngka()` (menolak input non-angka), dan `bacaPilihanMenu()` (membatasi pilihan ke rentang angka valid), jadi program tidak akan crash walau user salah input.
 
-Kalau user pilih **Tambah Pengajuan**, program minta ID (divalidasi harus positif dan belum dipakai), nama, departemen, catatan, dan deadline, lalu user memilih jenis desain lewat submenu: Digital atau Cetak. Untuk Digital, user memilih target platform dan format file lewat menu pilihan (bukan ketik manual); untuk Cetak, user memilih ukuran media dan memasukkan jumlah cetak (divalidasi harus lebih dari 0). Data yang terkumpul lalu dibungkus jadi object `PengajuanDigital` atau `PengajuanCetak`, dikirim ke `PengajuanController.simpanPengajuan()` untuk disimpan ke ArrayList.
+Kalau user pilih **Tambah Pengajuan**, program minta ID (divalidasi harus positif dan belum dipakai), nama, departemen, catatan, dan deadline, lalu user memilih jenis desain lewat submenu: Digital atau Cetak.
+
+- Kalau pilih **Digital**, user memilih target platform (Instagram Feed / Story / Web Banner) dan format file (PNG/JPG/PDF) lewat menu pilihan, bukan ketik manual. Data lalu dibungkus jadi object `PengajuanDigital`.
+- Kalau pilih **Cetak**, user memilih ukuran media (A4 Hardpaper / A3 Poster / Banner 2x1m) lewat menu pilihan, lalu memasukkan jumlah cetak (divalidasi harus lebih dari 0). Data lalu dibungkus jadi object `PengajuanCetak`.
+
+Object yang terbentuk kemudian dikirim ke `PengajuanController.simpanPengajuan()` untuk disimpan ke ArrayList.
 
 Untuk **Tampilkan Pengajuan**, seluruh ArrayList ditelusuri dan tiap object memanggil method `tampilkanDetail()` miliknya sendiri. **Update** dan **Hapus** sama-sama minta ID, dicari lewat `cariBerdasarkanId()` di controller; kalau ID cocok, catatan revisi diperbarui atau datanya dihapus dari ArrayList, kalau tidak ketemu program kasih pesan "tidak ditemukan".
 
@@ -34,7 +39,7 @@ Untuk **Tampilkan Pengajuan**, seluruh ArrayList ditelusuri dan tiap object mema
 
 ## Penjelasan Letak Penerapan Nilai Tambah
 
-**Struktur MVC** project dibagi jadi 4 package: `model` (`Pemohon`, `PengajuanDesain`, `PengajuanDigital`, `PengajuanCetak` — menyimpan struktur data), `view` (`PengajuanView` — menangani tampilan menu dan input/output ke user), `controller` (`PengajuanController` — mengelola ArrayList data dan logika penyimpanan/pencarian/penghapusan), dan `cominfo` (`Main` — entry point yang menghubungkan view dan controller).
+**Struktur MVC** project dibagi jadi 4 package: `model` (`Pemohon`, `PengajuanDesain`, `PengajuanDigital`, `PengajuanCetak` menyimpan struktur data), `view` (`PengajuanView` menangani tampilan menu dan input/output ke user), `controller` (`PengajuanController` mengelola ArrayList data dan logika penyimpanan/pencarian/penghapusan), dan `cominfo` (`Main` entry point yang menghubungkan view dan controller).
 
 <img width="351" height="199" alt="image" src="https://github.com/user-attachments/assets/4b371225-31c4-4ec8-8e44-9f825952536c" />
 
@@ -45,6 +50,6 @@ Untuk **Tampilkan Pengajuan**, seluruh ArrayList ditelusuri dan tiap object mema
 <img width="638" height="154" alt="image" src="https://github.com/user-attachments/assets/1905e9b3-c440-44fd-8587-5bed38037eb6" />
 
 
-**Polymorphism (Method Overloading)** — di `PengajuanDesain.java` ada dua method `updateInformasi()` dengan parameter berbeda: satu hanya menerima `catatanRevisi`, satu lagi menerima `catatanRevisi` dan `status` sekaligus.
+**Polymorphism (Method Overloading)** di `PengajuanDesain.java` ada dua method `updateInformasi()` dengan parameter berbeda: satu hanya menerima `catatanRevisi`, satu lagi menerima `catatanRevisi` dan `status` sekaligus.
 
 <img width="643" height="159" alt="image" src="https://github.com/user-attachments/assets/7a3e00de-aaf4-4f15-8fc9-a46b2ae3647b" />
