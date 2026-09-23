@@ -31,23 +31,23 @@ Untuk **Tampilkan Pengajuan**, seluruh ArrayList ditelusuri dan tiap object mema
 
 ![Inheritance-superclass](/assets/inheritance-superclass.png)
 
-![Inheritance-subclass-digital]<img width="466" height="61" alt="Screenshot 2026-09-23 160921" src="https://github.com/user-attachments/assets/de4a5a9b-0d8a-4873-a71a-053534809a3a" />
+![Inheritance-subclass-digital](/assets/inheritance-subclass-digital.png)
 
-![Inheritance-subclass-cetak]<img width="477" height="81" alt="Screenshot 2026-09-23 160951" src="https://github.com/user-attachments/assets/e51a624e-c64b-4b68-b71a-b6d6e8e3f3aa" />
+![Inheritance-subclass-cetak](/assets/inheritance-subclass-cetak.png)
 
 
 ## Penjelasan Letak Penerapan Nilai Tambah
 
 **Struktur MVC** project dibagi jadi 4 package: `model` (`Pemohon`, `PengajuanDesain`, `PengajuanDigital`, `PengajuanCetak` menyimpan struktur data), `view` (`PengajuanView` menangani tampilan menu dan input/output ke user), `controller` (`PengajuanController` mengelola ArrayList data dan logika penyimpanan/pencarian/penghapusan), dan `cominfo` (`Main` entry point yang menghubungkan view dan controller).
 
-<img width="351" height="199" alt="Screenshot 2026-09-23 161136" src="https://github.com/user-attachments/assets/bc4c82a5-bfa0-4f5a-b0ef-af38d8469450" />
+![MVC](/assets/mvc.png)
 
 **Polymorphism (Method Overriding)** method `tampilkanDetail()` di superclass `PengajuanDesain` di-override di `PengajuanDigital` dan `PengajuanCetak` dengan anotasi `@Override`; masing-masing memanggil `super.tampilkanDetail()` dulu untuk menampilkan info umum, lalu menambahkan info khusus jenisnya (platform & format, atau ukuran & jumlah cetak).
 
-<img width="586" height="146" alt="Screenshot 2026-09-23 161248" src="https://github.com/user-attachments/assets/d3a64c56-5ba9-440f-9f58-461d0a421d34" />
+![Overiding-digital](/assets/overide-digital.png)
 
-<img width="638" height="154" alt="Screenshot 2026-09-23 161317" src="https://github.com/user-attachments/assets/5f8f8817-cb58-40e1-bf01-ffac79d52cd0" />
+![Overiding-cetak](/assets/overide-cetak.png)
 
 **Polymorphism (Method Overloading)** di `PengajuanDesain.java` ada dua method `updateInformasi()` dengan parameter berbeda: satu hanya menerima `catatanRevisi`, satu lagi menerima `catatanRevisi` dan `status` sekaligus.
 
-<img width="643" height="159" alt="Screenshot 2026-09-23 161426" src="https://github.com/user-attachments/assets/511a3ffb-0ee2-440c-8287-022c03416b3e" />
+![Overloading](/assets/overloading.png)
