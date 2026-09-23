@@ -25,30 +25,29 @@ Untuk **Tampilkan Pengajuan**, seluruh ArrayList ditelusuri dan tiap object mema
 
 **Encapsulation** semua atribut di class `Pemohon`, `PengajuanDesain`, `PengajuanDigital`, dan `PengajuanCetak` dideklarasikan `private`, jadi tidak bisa diakses langsung dari luar class. Untuk mengambil atau mengubah nilainya harus lewat method `public` seperti getter/setter (`getNamaLengkap()`, `getIdPengajuan()`, `setStatus()`, dst).
 
-<img width="622" height="513" alt="Screenshot 2026-09-23 155809" src="https://github.com/user-attachments/assets/0f747d10-d658-4f57-8bc9-d61ecd92fb98" />
+<img width="622" height="513" alt="Screenshot 2026-09-23 155809" src="https://github.com/user-attachments/assets/2fc2b3d9-8a8d-427c-a78b-a1263a940357" />
 
 **Inheritance** `PengajuanDesain` dibuat sebagai **superclass abstract** yang menyimpan atribut dan method umum (id, pemohon, catatan, deadline, status, `tampilkanDetail()`). Dua class turunannya, `PengajuanDigital` dan `PengajuanCetak`, memakai keyword `extends PengajuanDesain` dan memanggil `super(...)` di constructor-nya untuk mewariskan data dari superclass, lalu menambahkan atribut khusus masing-masing (target platform & format file untuk Digital; ukuran media & jumlah cetak untuk Cetak).
 
-<img width="369" height="121" alt="Screenshot_2026-09-23_160510" src="https://github.com/user-attachments/assets/a635555b-1475-4c3b-b391-5f715b3d0f60" />
+<img width="369" height="121" alt="Screenshot 2026-09-23 160510" src="https://github.com/user-attachments/assets/37f5d677-9ca8-495d-9c79-846a410aca3b" />
 
-<img width="466" height="61" alt="Screenshot_2026-09-23_160921" src="https://github.com/user-attachments/assets/86dff041-1194-4eeb-a794-43d8ac7722d7" />
+<img width="466" height="61" alt="Screenshot 2026-09-23 160921" src="https://github.com/user-attachments/assets/de4a5a9b-0d8a-4873-a71a-053534809a3a" />
 
-<img width="477" height="81" alt="Screenshot 2026-09-23 160951" src="https://github.com/user-attachments/assets/33bb02cc-1182-4390-9a7e-55adb2897d8a" />
+<img width="477" height="81" alt="Screenshot 2026-09-23 160951" src="https://github.com/user-attachments/assets/e51a624e-c64b-4b68-b71a-b6d6e8e3f3aa" />
 
 
 ## Penjelasan Letak Penerapan Nilai Tambah
 
 **Struktur MVC** project dibagi jadi 4 package: `model` (`Pemohon`, `PengajuanDesain`, `PengajuanDigital`, `PengajuanCetak` menyimpan struktur data), `view` (`PengajuanView` menangani tampilan menu dan input/output ke user), `controller` (`PengajuanController` mengelola ArrayList data dan logika penyimpanan/pencarian/penghapusan), dan `cominfo` (`Main` entry point yang menghubungkan view dan controller).
 
-<img width="351" height="199" alt="Screenshot 2026-09-23 161136" src="https://github.com/user-attachments/assets/644d18cc-c083-4070-b74a-541da15ce9dc" />
+<img width="351" height="199" alt="Screenshot 2026-09-23 161136" src="https://github.com/user-attachments/assets/bc4c82a5-bfa0-4f5a-b0ef-af38d8469450" />
 
 **Polymorphism (Method Overriding)** method `tampilkanDetail()` di superclass `PengajuanDesain` di-override di `PengajuanDigital` dan `PengajuanCetak` dengan anotasi `@Override`; masing-masing memanggil `super.tampilkanDetail()` dulu untuk menampilkan info umum, lalu menambahkan info khusus jenisnya (platform & format, atau ukuran & jumlah cetak).
 
-<img width="586" height="146" alt="Screenshot 2026-09-23 161248" src="https://github.com/user-attachments/assets/c0e7d585-d833-4ed4-bbd8-3e62ba6c0f7c" />
+<img width="586" height="146" alt="Screenshot 2026-09-23 161248" src="https://github.com/user-attachments/assets/d3a64c56-5ba9-440f-9f58-461d0a421d34" />
 
-<img width="638" height="154" alt="Screenshot 2026-09-23 161317" src="https://github.com/user-attachments/assets/47f0fe30-8d43-4110-96b0-4c50438de975" />
-
+<img width="638" height="154" alt="Screenshot 2026-09-23 161317" src="https://github.com/user-attachments/assets/5f8f8817-cb58-40e1-bf01-ffac79d52cd0" />
 
 **Polymorphism (Method Overloading)** di `PengajuanDesain.java` ada dua method `updateInformasi()` dengan parameter berbeda: satu hanya menerima `catatanRevisi`, satu lagi menerima `catatanRevisi` dan `status` sekaligus.
 
-<img width="643" height="159" alt="Screenshot 2026-09-23 161426" src="https://github.com/user-attachments/assets/1cc80ba1-77f7-48be-97c0-384b8fe8fe1e" />
+<img width="643" height="159" alt="Screenshot 2026-09-23 161426" src="https://github.com/user-attachments/assets/511a3ffb-0ee2-440c-8287-022c03416b3e" />
