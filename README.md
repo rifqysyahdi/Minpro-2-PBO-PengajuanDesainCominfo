@@ -25,31 +25,30 @@ Untuk **Tampilkan Pengajuan**, seluruh ArrayList ditelusuri dan tiap object mema
 
 **Encapsulation** semua atribut di class `Pemohon`, `PengajuanDesain`, `PengajuanDigital`, dan `PengajuanCetak` dideklarasikan `private`, jadi tidak bisa diakses langsung dari luar class. Untuk mengambil atau mengubah nilainya harus lewat method `public` seperti getter/setter (`getNamaLengkap()`, `getIdPengajuan()`, `setStatus()`, dst).
 
-<img width="622" height="513" alt="Screenshot 2026-09-23 155809" src="https://github.com/user-attachments/assets/e948f9a5-d287-45fb-b221-84bcc82a9937" />
-
+<img width="622" height="513" alt="Screenshot 2026-09-23 155809" src="https://github.com/user-attachments/assets/84ec6f19-a6c5-4044-8b6d-9ae3f2c06d51" />
 
 **Inheritance** `PengajuanDesain` dibuat sebagai **superclass abstract** yang menyimpan atribut dan method umum (id, pemohon, catatan, deadline, status, `tampilkanDetail()`). Dua class turunannya, `PengajuanDigital` dan `PengajuanCetak`, memakai keyword `extends PengajuanDesain` dan memanggil `super(...)` di constructor-nya untuk mewariskan data dari superclass, lalu menambahkan atribut khusus masing-masing (target platform & format file untuk Digital; ukuran media & jumlah cetak untuk Cetak).
 
-<img width="369" height="121" alt="Screenshot 2026-09-23 160510" src="https://github.com/user-attachments/assets/332d1967-abb7-42fb-be39-5f9b47211fd6" />
+<img width="369" height="121" alt="Screenshot 2026-09-23 160510" src="https://github.com/user-attachments/assets/a635555b-1475-4c3b-b391-5f715b3d0f60" />
 
-<img width="466" height="61" alt="image" src="https://github.com/user-attachments/assets/0146b6e2-e747-4144-84c4-39354614e97d" />
+<img width="466" height="61" alt="Screenshot 2026-09-23 160921" src="https://github.com/user-attachments/assets/86dff041-1194-4eeb-a794-43d8ac7722d7" />
 
-<img width="477" height="81" alt="image" src="https://github.com/user-attachments/assets/15aa94fd-b085-47e8-a0ba-adef39b3c889" />
+<img width="477" height="81" alt="Screenshot 2026-09-23 160951" src="https://github.com/user-attachments/assets/33bb02cc-1182-4390-9a7e-55adb2897d8a" />
 
 
 ## Penjelasan Letak Penerapan Nilai Tambah
 
 **Struktur MVC** project dibagi jadi 4 package: `model` (`Pemohon`, `PengajuanDesain`, `PengajuanDigital`, `PengajuanCetak` menyimpan struktur data), `view` (`PengajuanView` menangani tampilan menu dan input/output ke user), `controller` (`PengajuanController` mengelola ArrayList data dan logika penyimpanan/pencarian/penghapusan), dan `cominfo` (`Main` entry point yang menghubungkan view dan controller).
 
-<img width="351" height="199" alt="image" src="https://github.com/user-attachments/assets/4b371225-31c4-4ec8-8e44-9f825952536c" />
+<img width="351" height="199" alt="Screenshot 2026-09-23 161136" src="https://github.com/user-attachments/assets/644d18cc-c083-4070-b74a-541da15ce9dc" />
 
 **Polymorphism (Method Overriding)** method `tampilkanDetail()` di superclass `PengajuanDesain` di-override di `PengajuanDigital` dan `PengajuanCetak` dengan anotasi `@Override`; masing-masing memanggil `super.tampilkanDetail()` dulu untuk menampilkan info umum, lalu menambahkan info khusus jenisnya (platform & format, atau ukuran & jumlah cetak).
 
-<img width="586" height="146" alt="image" src="https://github.com/user-attachments/assets/01567dee-2d49-46fb-a36e-3a64c33e82fd" />
+<img width="586" height="146" alt="Screenshot 2026-09-23 161248" src="https://github.com/user-attachments/assets/c0e7d585-d833-4ed4-bbd8-3e62ba6c0f7c" />
 
-<img width="638" height="154" alt="image" src="https://github.com/user-attachments/assets/1905e9b3-c440-44fd-8587-5bed38037eb6" />
+<img width="638" height="154" alt="Screenshot 2026-09-23 161317" src="https://github.com/user-attachments/assets/47f0fe30-8d43-4110-96b0-4c50438de975" />
 
 
 **Polymorphism (Method Overloading)** di `PengajuanDesain.java` ada dua method `updateInformasi()` dengan parameter berbeda: satu hanya menerima `catatanRevisi`, satu lagi menerima `catatanRevisi` dan `status` sekaligus.
 
-<img width="643" height="159" alt="image" src="https://github.com/user-attachments/assets/7a3e00de-aaf4-4f15-8fc9-a46b2ae3647b" />
+<img width="643" height="159" alt="Screenshot 2026-09-23 161426" src="https://github.com/user-attachments/assets/1cc80ba1-77f7-48be-97c0-384b8fe8fe1e" />
