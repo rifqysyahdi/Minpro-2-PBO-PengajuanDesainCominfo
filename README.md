@@ -25,7 +25,7 @@ Untuk **Tampilkan Pengajuan**, seluruh ArrayList ditelusuri dan tiap object mema
 
 **Encapsulation** semua atribut di class `Pemohon`, `PengajuanDesain`, `PengajuanDigital`, dan `PengajuanCetak` dideklarasikan `private`, jadi tidak bisa diakses langsung dari luar class. Untuk mengambil atau mengubah nilainya harus lewat method `public` seperti getter/setter (`getNamaLengkap()`, `getIdPengajuan()`, `setStatus()`, dst).
 
-[Penggunaan Encapsulation]<img width="622" height="513" alt="Screenshot 2026-09-23 155809" src="https://github.com/user-attachments/assets/0f747d10-d658-4f57-8bc9-d61ecd92fb98" />
+<img width="622" height="513" alt="Screenshot 2026-09-23 155809" src="https://github.com/user-attachments/assets/0f747d10-d658-4f57-8bc9-d61ecd92fb98" />
 
 **Inheritance** `PengajuanDesain` dibuat sebagai **superclass abstract** yang menyimpan atribut dan method umum (id, pemohon, catatan, deadline, status, `tampilkanDetail()`). Dua class turunannya, `PengajuanDigital` dan `PengajuanCetak`, memakai keyword `extends PengajuanDesain` dan memanggil `super(...)` di constructor-nya untuk mewariskan data dari superclass, lalu menambahkan atribut khusus masing-masing (target platform & format file untuk Digital; ukuran media & jumlah cetak untuk Cetak).
 
